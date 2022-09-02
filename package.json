@@ -1,0 +1,23 @@
+{
+  "name": "my-debts-app_back-end",
+  "version": "1.0.0",
+  "description": "Node.js/Express.js; Mongoose - MongoDB Atlas; BackendAPI, use https://render.com/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tate-T/my-debts-app_back-end.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tate-T/my-debts-app_back-end/issues"
+  },
+  "homepage": "https://github.com/Tate-T/my-debts-app_back-end#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
