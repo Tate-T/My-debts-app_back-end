@@ -3,8 +3,14 @@
   "version": "1.0.0",
   "description": "Node.js/Express.js; Mongoose - MongoDB Atlas; BackendAPI, use https://render.com/",
   "main": "index.js",
+  "engines": {
+    "node": "14.x",
+    "npm": "6.x"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env NODE_ENV=production node ./src/server.js",
+    "start:dev": "cross-env NODE_ENV=development nodemon ./src/server.js"
   },
   "repository": {
     "type": "git",
