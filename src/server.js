@@ -1,12 +1,14 @@
 const app = require("./app");
-const { connectMongo } = require("./db-debts");
+const { connectMongo } = require("./db/connections");
+
+require("dotenv").config();
 
 const PORT = process.env.PORT || 3001;
 
 const main = async () => {
     try {
         await connectMongo();
-        console.log("Database connection successful");
+        console.log("Database connection is successful");
         app.listen(PORT, (err) => {
             if (err) console.error("Error at aserver launch:", err);
             console.log(`Server running. Use our API on port: ${PORT}`);

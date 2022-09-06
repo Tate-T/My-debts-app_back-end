@@ -1,26 +1,36 @@
 const { Schema, model } = require("mongoose");
 
 const debtsSchema = new Schema({
-    name: {
+    borrowerName: {
         type: String,
         required: [true, "Name is required"],
     },
-    amount: {
+    borrowerPhone: {
+        type: String,
+        required: [true, "Phone is required"],
+        default: null,
+    },
+    debtName: {
+        type: String,
+        required: [true, "Debt name is required"],
+    },
+    outstandingAmount: {
         type: Number,
         required: [true, "Amount is required"],
-        unique: true,
-    },
-    payment: {
-        type: Number,
-        default: 0,
     },
     rate: {
         type: Number,
+        required: [true, "Rate is required"],
         default: 0,
     },
-    phone: {
-        type: String,
-        default: null,
+    minimalPayment: {
+        type: Number,
+        required: [true, "Payment is required"],
+        default: 0,
+    },
+    extraAmount: {
+        type: Number,
+        required: [true, "Amount is required"],
     },
 });
 

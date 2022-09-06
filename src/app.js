@@ -1,5 +1,5 @@
 const express = require('express');
-// const logger = require("morgan");
+const logger = require("morgan");
 const cors = require("cors");
 const path = require("path");
 
@@ -9,12 +9,15 @@ const debtsRouter = require("./routes/api/debts");
 
 const app = express();
 
-// app.use(logger(formatsLogger));
+
+const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short';
+
+app.use(logger(formatsLogger));
 app.use(cors());
 app.use(express.json());
 
 
-app.use("/debts", debtsRouter);
+app.use("/api/debts", debtsRouter);
 app.use(express.static("public"));
 
 app.use((req, res) => {
