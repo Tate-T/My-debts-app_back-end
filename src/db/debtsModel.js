@@ -28,10 +28,10 @@ const debtsSchema = new Schema({
         required: [true, "Payment is required"],
         default: 0,
     },
-    extraAmount: {
-        type: Number,
-        required: [true, "Amount is required"],
-    },
+    // extraAmount: {
+    //     type: Number,
+    //     required: [true, "Amount is required"],
+    // },
 });
 
 const Debts = model("debts", debtsSchema);

@@ -12,6 +12,19 @@ const debtList = async name => {
   return debt;
 };
 
+const addDebt = async ({ borrowerName, borrowerPhone, debtName, outstandingAmount, rate, minimalPayment }) => {
+
+  let newDebt = { borrowerName, borrowerPhone, debtName, outstandingAmount, rate, minimalPayment };
+  try {
+    const newDebts = await new Debts(newDebt);
+    await newDebts.save();
+    return newDebts;
+  } catch (err) {
+    console.error(err);
+  }
+  return newDebt;
+};
+
 module.exports = {
-  debtList
+  debtList, addDebt
 };
