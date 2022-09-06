@@ -6,10 +6,11 @@ const uuid = require("uuid");
 
 require("dotenv").config();
 
-const debtList = async name => {
+const debtList = async () => {
 
-  let debt = await Debts.find({ name });
-  return debt;
+  const debts = await Debts.find({});
+  console.log(debts)
+  return debts;
 };
 
 const addDebt = async ({ borrowerName, borrowerPhone, debtName, outstandingAmount, rate, minimalPayment }) => {
