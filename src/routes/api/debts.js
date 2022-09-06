@@ -7,6 +7,6 @@ const {
 
 const router = express.Router();
 
-router.get("/", catchErrors(currentDebtsControl));
+router.get("/");
 
 module.exports = router;
